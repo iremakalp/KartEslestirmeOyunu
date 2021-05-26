@@ -156,8 +156,7 @@ namespace KartEslestirmeOyunu
                     puanLbl.Text = toplamPuan.ToString();
                     SoundPlayer simpleSound = new SoundPlayer(@"C:\Users\Desktop-Irem\Source\Repos\KartEslestirmeOyunu\KartEslestirmeOyunu\bin\Debug\yanlis_cevap.wav");
                     simpleSound.Play();
-                }
-               
+                }             
                 ilkKutu = null;
             }
         }

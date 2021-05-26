@@ -26,7 +26,7 @@ namespace KartEslestirmeOyunu
         Resimler resimler = new Resimler();
         int[] indeksler = { 0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5 };
         public static int toplamPuan;
-        public static byte kalanSure = 60;
+        public static byte kalanSure = 80;
         public UCPlayKolay()
         {
             InitializeComponent();
@@ -108,7 +108,7 @@ namespace KartEslestirmeOyunu
             }
             else
             {
-                System.Threading.Thread.Sleep(2000);
+                System.Threading.Thread.Sleep(1000);
                 ilkKutu.Image = null;
                 box.Image = null;
                 if (ilkIndex == indexNo)
@@ -122,11 +122,10 @@ namespace KartEslestirmeOyunu
                     isaret(bulunan);
                     bunifuTransition2.HideSync(box);
                     bunifuTransition2.HideSync(ilkKutu);
-
                     toplamPuan += 50;
                     puanLbl.Text = toplamPuan.ToString();
                     ilkKutu.Visible = false;
-                    box.Visible = false;
+                    box.Visible = false;             
                     if (bulunan == 6)
                     {
                         falseGif.Visible = false;
@@ -149,7 +148,7 @@ namespace KartEslestirmeOyunu
                     SoundPlayer simpleSound = new SoundPlayer(@"C:\Users\Desktop-Irem\Source\Repos\KartEslestirmeOyunu\KartEslestirmeOyunu\bin\Debug\yanlis_cevap.wav");
                     simpleSound.Play();                   
                 }
-                ilkKutu = null;             
+                ilkKutu = null;
             }
         }
         private void UCPlayKolay_Load(object sender, EventArgs e)
@@ -159,10 +158,10 @@ namespace KartEslestirmeOyunu
             falseGif.Visible = false;
             trueGif.Visible = false;
             toplamPuan = 0;
-            timerLbl.Text = "60";
+            timerLbl.Text = "80";
             timer1.Enabled = true;
             timer1.Interval = 1000;
-            kalanSure = 60;
+            kalanSure = 80;
         }
         private void timer1_Tick(object sender, EventArgs e)
         {
