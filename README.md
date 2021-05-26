@@ -16,8 +16,8 @@ Bu projede C# ve MySQL kullanarak kart eşleştirme oyunu geliştirilmiştir.
 ### Oyun
 ![image](https://user-images.githubusercontent.com/71495532/119730568-8d41f980-be7e-11eb-8156-235b83ea4781.png)
 ![image](https://user-images.githubusercontent.com/71495532/119730580-903cea00-be7e-11eb-99dd-b1ba31aa5905.png)
-![image](https://user-images.githubusercontent.com/71495532/119730588-9337da80-be7e-11eb-8a87-1c118fcc4446.png)
 ![image](https://user-images.githubusercontent.com/71495532/119730600-959a3480-be7e-11eb-9103-c2e8bf2d83cc.png)
+![image](https://user-images.githubusercontent.com/71495532/119730588-9337da80-be7e-11eb-8a87-1c118fcc4446.png)
 
 ## Nasıl Oynanır?
     Giriş sayfasında kolay orta zor seviyelerinden biri seçilir. Kullanıcı adı girilir ve oyna butonuna basılır.
