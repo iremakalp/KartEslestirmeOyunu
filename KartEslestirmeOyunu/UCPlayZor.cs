@@ -125,7 +125,7 @@ namespace KartEslestirmeOyunu
                     trueGif.Visible = true;
                     uyariLbl.Text = "Bir çift buldun";
                     //referans: https://docs.microsoft.com/tr-tr/dotnet/desktop/winforms/controls/how-to-play-a-sound-from-a-windows-form?view=netframeworkdesktop-4.8
-                    SoundPlayer simpleSound = new SoundPlayer(@"C:\Users\Desktop-Irem\Source\Repos\KartEslestirmeOyunu\KartEslestirmeOyunu\bin\Debug\dogru_cevap.wav");
+                    SoundPlayer simpleSound = new SoundPlayer(@"C:\Users\Desktop-Irem\Source\Repos\KartEslestirmeOyunu\KartEslestirmeOyunu\bin\Debug\dogru.wav");
                     simpleSound.Play();
                     bulunan++;
                     isaret(bulunan);

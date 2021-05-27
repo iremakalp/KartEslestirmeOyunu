@@ -344,9 +344,11 @@
     <None Include="bin\Debug\img\question.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Debug\dogru.wav" />
     <Content Include="bin\Debug\dogru_cevap.wav" />
     <None Include="bin\Debug\img\logo orta renkli.png" />
     <None Include="bin\Debug\img\check.png" />
+    <Content Include="bin\Debug\timeup.wav" />
     <Content Include="bin\Debug\yanlis_cevap.wav" />
     <Content Include="bin\Debug\zaman_doldu.wav" />
     <Content Include="bin\Debug\giphy.gif" />

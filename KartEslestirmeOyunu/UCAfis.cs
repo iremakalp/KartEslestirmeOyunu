@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -44,21 +45,20 @@ namespace KartEslestirmeOyunu
 
         private void UCAfis_Load(object sender, EventArgs e)
         {
+            SoundPlayer simpleSound = new SoundPlayer(@"C:\Users\Desktop-Irem\Source\Repos\KartEslestirmeOyunu\KartEslestirmeOyunu\bin\Debug\timeup.wav");
+            simpleSound.Play();
             adLbl.Text ="Ad:"+ UCHome.isim;
             if(UCHome.seviye=="Kolay")
             {
                 puanLbl.Text = "Puan:" + UCPlayKolay.toplamPuan.ToString();
-
             }
             else if(UCHome.seviye == "Orta")
             {
                 puanLbl.Text = "Puan:" + UCPlayOrta.toplamPuan.ToString();
-
             }
             else
             {
                 puanLbl.Text = "Puan:" + UCPlayZor.toplamPuan.ToString();
-
             }
         }
     }
