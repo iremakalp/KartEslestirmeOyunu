@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -25,6 +26,9 @@ namespace KartEslestirmeOyunu
         }
         private void UCSonuc_Load(object sender, EventArgs e)
         {
+            Home.menuPanel.Enabled = true;
+            SoundPlayer simpleSound = new SoundPlayer(@"C:\Users\Desktop-Irem\Source\Repos\KartEslestirmeOyunu\KartEslestirmeOyunu\bin\Debug\alkis.wav");
+            simpleSound.Play();
             adLbl.Text = "Ad:" + UCHome.isim;
             if (UCHome.seviye == "Kolay")
             {

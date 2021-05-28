@@ -50,8 +50,9 @@ namespace KartEslestirmeOyunu
             // 
             // guna2BorderlessForm1
             // 
-            this.guna2BorderlessForm1.ContainerControl = this;
             this.guna2BorderlessForm1.BorderRadius = 20;
+            this.guna2BorderlessForm1.ContainerControl = this;
+            this.guna2BorderlessForm1.ResizeForm = false;
             // 
             // ucHomePanel
             // 

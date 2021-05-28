@@ -45,6 +45,7 @@ namespace KartEslestirmeOyunu
 
         private void UCAfis_Load(object sender, EventArgs e)
         {
+            Home.menuPanel.Enabled = true;
             SoundPlayer simpleSound = new SoundPlayer(@"C:\Users\Desktop-Irem\Source\Repos\KartEslestirmeOyunu\KartEslestirmeOyunu\bin\Debug\timeup.wav");
             simpleSound.Play();
             adLbl.Text ="Ad:"+ UCHome.isim;

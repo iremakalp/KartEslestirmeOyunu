@@ -30,34 +30,16 @@ namespace KartEslestirmeOyunu
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCAfis));
-            this.yenidenBtn = new Guna.UI2.WinForms.Guna2Button();
             this.ucHomePanel = new Guna.UI2.WinForms.Guna2Panel();
             this.puanLbl = new System.Windows.Forms.Label();
             this.adLbl = new System.Windows.Forms.Label();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.zaman = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.yenidenBtn = new Guna.UI2.WinForms.Guna2Button();
             this.ucHomePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.zaman)).BeginInit();
             this.SuspendLayout();
-            // 
-            // yenidenBtn
-            // 
-            this.yenidenBtn.BackColor = System.Drawing.Color.Transparent;
-            this.yenidenBtn.BorderRadius = 20;
-            this.yenidenBtn.CheckedState.Parent = this.yenidenBtn;
-            this.yenidenBtn.CustomImages.Parent = this.yenidenBtn;
-            this.yenidenBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(41)))), ((int)(((byte)(123)))));
-            this.yenidenBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.yenidenBtn.ForeColor = System.Drawing.Color.White;
-            this.yenidenBtn.HoverState.Parent = this.yenidenBtn;
-            this.yenidenBtn.Location = new System.Drawing.Point(285, 381);
-            this.yenidenBtn.Name = "yenidenBtn";
-            this.yenidenBtn.ShadowDecoration.Parent = this.yenidenBtn;
-            this.yenidenBtn.Size = new System.Drawing.Size(109, 38);
-            this.yenidenBtn.TabIndex = 7;
-            this.yenidenBtn.Text = "Yeniden Başlat";
-            this.yenidenBtn.Click += new System.EventHandler(this.yenidenBtn_Click);
             // 
             // ucHomePanel
             // 
@@ -123,6 +105,24 @@ namespace KartEslestirmeOyunu
             this.zaman.TabIndex = 11;
             this.zaman.TabStop = false;
             // 
+            // yenidenBtn
+            // 
+            this.yenidenBtn.BackColor = System.Drawing.Color.Transparent;
+            this.yenidenBtn.BorderRadius = 20;
+            this.yenidenBtn.CheckedState.Parent = this.yenidenBtn;
+            this.yenidenBtn.CustomImages.Parent = this.yenidenBtn;
+            this.yenidenBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(41)))), ((int)(((byte)(123)))));
+            this.yenidenBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.yenidenBtn.ForeColor = System.Drawing.Color.White;
+            this.yenidenBtn.HoverState.Parent = this.yenidenBtn;
+            this.yenidenBtn.Location = new System.Drawing.Point(285, 381);
+            this.yenidenBtn.Name = "yenidenBtn";
+            this.yenidenBtn.ShadowDecoration.Parent = this.yenidenBtn;
+            this.yenidenBtn.Size = new System.Drawing.Size(109, 38);
+            this.yenidenBtn.TabIndex = 7;
+            this.yenidenBtn.Text = "Yeniden Başlat";
+            this.yenidenBtn.Click += new System.EventHandler(this.yenidenBtn_Click);
+            // 
             // UCAfis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -140,11 +140,11 @@ namespace KartEslestirmeOyunu
         }
 
         #endregion
-        private Guna.UI2.WinForms.Guna2Button yenidenBtn;
         private Guna.UI2.WinForms.Guna2Panel ucHomePanel;
         private Guna.UI2.WinForms.Guna2PictureBox zaman;
         private System.Windows.Forms.Label puanLbl;
         private System.Windows.Forms.Label adLbl;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
+        private Guna.UI2.WinForms.Guna2Button yenidenBtn;
     }
 }
