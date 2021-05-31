@@ -9,7 +9,7 @@ namespace KartEslestirmeOyunu
 {
    public class Resimler
     {    
-        public Image[] cicekler=
+        public Image[] cicekler= //resim dizisi
         {
             Properties.Resources.gelincik,
             Properties.Resources.ayçiçeği,
@@ -28,9 +28,9 @@ namespace KartEslestirmeOyunu
 
         };
 
-        public Image[] hayvanlar =
+        public Image[] hayvanlar = //resim dizisi
         {
-             Properties.Resources.fil,
+            Properties.Resources.fil,
             Properties.Resources.koala,
             Properties.Resources.kuş,
             Properties.Resources.penguen,
@@ -41,7 +41,7 @@ namespace KartEslestirmeOyunu
 
         };
 
-        public Image[] meslekler =
+        public Image[] meslekler = //resim dizisi
         {
             Properties.Resources.açşı,
             Properties.Resources.doktor,

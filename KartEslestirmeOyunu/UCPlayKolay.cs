@@ -20,36 +20,39 @@ namespace KartEslestirmeOyunu
         MySqlDataReader dr;
 
         PictureBox ilkKutu;
-        int ilkIndex;
-        int bulunan;
-        public static int denemeSayisi;
-        Resimler resimler = new Resimler();
-        int[] indeksler = { 0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5 };
-        public static int toplamPuan;
-        public static byte kalanSure = 80;
+        int ilkIndex; //ilk secilen resmin indexini tutar
+        int bulunan; //dogru eslestirme sayisini tutar
+        public static int denemeSayisi;//kac deneme yapildigini tutar
+        Resimler resimler = new Resimler(); //resimler sinifindan resim almak icin
+        int[] indeksler = { 0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5 }; //resim indeksleri
+        public static int toplamPuan; //kazanilan puan
+        public static byte kalanSure = 80; //timer suresi
         public UCPlayKolay()
         {
             InitializeComponent();
         }               
         public void resimleriKaristir() //indeksleri karistirir
-        {              
+        {
+            //ilk eleman secilir
+            //rastgele bir eleman daha secilir
+            //ilk elemanla rastgele elemaninin yeri degistirilir
             Random rand = new Random();
-            for (int i = 0; i < 12; i++)
+            for (int i = 0; i < 12; i++) 
             {
-                int sayi = rand.Next(12);
-                int gecici = indeksler[i];
-                indeksler[i] = indeksler[sayi];
-                indeksler[sayi] = gecici;
+                int sayi = rand.Next(12); //0-12 arasi rastgele bir sayi secer
+                int gecici = indeksler[i]; //degistirilecek index kaybolmasin diye gecicide tutulur
+                indeksler[i] = indeksler[sayi]; //yeni index yerine atilir
+                indeksler[sayi] = gecici; //ilk secilen index degistirilen indexin yerine gecer
             }
         }
-        private void addUserControl(UserControl uc)
+        private void addUserControl(UserControl uc) //user controller eklemek icin
         {
             ucHomePanel.Controls.Clear();
             uc.Dock = DockStyle.Fill;
             uc.BringToFront();
             ucHomePanel.Controls.Add(uc);
         }
-        public void isaret(int bulunan)
+        public void isaret(int bulunan) //dogru eslestirilen cift sayısını gösteren yuvarlaklar icin
         {
             if(bulunan==1)
                 bulunan1.Image = Properties.Resources.check;
@@ -94,40 +97,42 @@ namespace KartEslestirmeOyunu
             uyariLbl.Text = "";        
             PictureBox box = (PictureBox)sender; //hangi kutuya tiklandigi
             bunifuTransition1.HideSync(box);
-            int boxNo = Convert.ToInt32(box.Name.Substring(10)); //kutunun numarasi 
-            int indexNo = indeksler[boxNo - 1];
-            box.Image = resimler.meslekler[indexNo];
+            //kutunun numarasini almak icin
+            //picturebox3 icin 3u almak 
+            int boxNo = Convert.ToInt32(box.Name.Substring(10)); // kutu numarasi
+            int indexNo = indeksler[boxNo - 1];//resmin index numarasi
+            //dizi 0dan, pictureboxda 1den basladigi icin boxNo-1
+            box.Image = resimler.meslekler[indexNo]; //kutunun numarasina gore resim ekler
             box.Refresh();
             bunifuTransition1.ShowSync(box);
-
-            if (ilkKutu == null)
+            if (ilkKutu == null) //ilk resme tiklandiysa
             {           
                 ilkKutu = box;
                 ilkIndex = indexNo;
-                denemeSayisi++;
+                denemeSayisi++; 
             }
             else
             {
-                System.Threading.Thread.Sleep(1000);
-                ilkKutu.Image = null;
-                box.Image = null;
-                if (ilkIndex == indexNo)
+                System.Threading.Thread.Sleep(1000); //uyutma
+                ilkKutu.Image = null; //kutuyu kapat
+                box.Image = null; //kutuyu kapat
+                if (ilkIndex == indexNo) //tiklanan ile ilk kutunun indexi ayni mi
                 {                 
                     trueGif.Visible = true;
                     uyariLbl.Text = "Bir çift buldun";
                     //referans: https://docs.microsoft.com/tr-tr/dotnet/desktop/winforms/controls/how-to-play-a-sound-from-a-windows-form?view=netframeworkdesktop-4.8
                     SoundPlayer simpleSound = new SoundPlayer(@"C:\Users\Desktop-Irem\Source\Repos\KartEslestirmeOyunu\KartEslestirmeOyunu\bin\Debug\dogru.wav");
                     simpleSound.Play();
-                    bulunan++;
-                    isaret(bulunan);
+                    bulunan++; //dogru eslestirme
+                    isaret(bulunan); //dogru sayisini kutuda gostermek icin
                     bunifuTransition2.HideSync(box);
                     bunifuTransition2.HideSync(ilkKutu);
                     toplamPuan += 50;
                     puanLbl.Text = toplamPuan.ToString();
-                    ilkKutu.Visible = false;
-                    box.Visible = false;             
-                    if (bulunan == 6)
-                    {
+                    ilkKutu.Visible = false; //kutu gider
+                    box.Visible = false;    //kutu gider         
+                    if (bulunan == 6) //tumunu eslestirmisse
+                    {                      
                         falseGif.Visible = false;
                         trueGif.Visible = false;
                         uyariLbl.Text = "";
@@ -148,7 +153,7 @@ namespace KartEslestirmeOyunu
                     SoundPlayer simpleSound = new SoundPlayer(@"C:\Users\Desktop-Irem\Source\Repos\KartEslestirmeOyunu\KartEslestirmeOyunu\bin\Debug\yanlis_cevap.wav");
                     simpleSound.Play();                   
                 }
-                ilkKutu = null;
+                ilkKutu = null; //
             }
         }
         private void UCPlayKolay_Load(object sender, EventArgs e)
